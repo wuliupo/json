@@ -1,0 +1,370 @@
+@charset "UTF-8";
+html {
+    height: 100%;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: menlo, monospace, Tahoma, '微软雅黑', '幼圆';
+    color: #4a5560;
+    --height: calc(1vh / 3);
+    --width: calc(1vw / 3);
+    --target: calc(var(--height) + var(--width));
+    font-size: 14px;
+    height: 100%;
+}
+.common-font-size {
+    --height: calc(1vh / 3);
+    --width: calc(1vw / 3);
+    --target: calc(var(--height) + var(--width));
+    font-size: 14px;
+}
+/*::-moz-selection {
+  background: #12c48b;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #12c48b;
+  color: #fff;
+  text-shadow: none;
+}*/
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1baae4;
+    font-family: monospace, Tahoma, '微软雅黑';
+}
+.green {
+    color: #17b272;
+}
+.red {
+    color: #ff585d;
+}
+.red:hover {
+    color: #f98280;
+}
+.blue {
+    color: #1baae4;
+}
+.orange {
+    color: #fbc462;
+}
+input:focus,
+textarea:focus {
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+    color: #47a7e6;
+}
+.label-success {
+    background-color: #0fd59d;
+}
+.header {
+    border-bottom: solid 1px #e5ebee;
+    padding: 0px;
+}
+.logo {
+    --height: calc(1vh / 3);
+    --width: calc(1vw / 3);
+    --target: calc(var(--height) + var(--width));
+    font-size: calc(var(--target) + 12px);
+    text-decoration: none;
+    font-weight: bold;
+    color: #0fd59d;
+    padding: 10px;
+    font-family: Tahoma;
+}
+.logo:hover {
+    color: #0fd59d;
+}
+.navi {
+    padding: 5px 20px;
+    font-weight: bold;
+}
+.navi a {
+    padding: 0px 20px;
+    color: #4a5560;
+}
+.json-src {
+    height: 100%;
+    min-height: 550px;
+    background-color: #f6f6f6;
+    padding: 0 10px 10px 10px;
+    border: 0;
+    border-right: solid 1px #e5ebee;
+    border-bottom: solid 1px #eee;
+    border-radius: 0;
+    resize: none;
+    outline: none;
+    font-size: 14px;
+}
+.tool {
+    padding: 10px;
+    height: 40px;
+    border-bottom: solid 1px #eee;
+    background-color: #fff;
+    width: 100%;
+    font-size: 16px;
+    z-index: 100;
+}
+.tool a {
+    padding: 0px 20px;
+    color: #999;
+}
+.navi a:hover {
+    color: #888;
+}
+footer {
+    margin-top: 1vh;
+    font-size: 14px;
+}
+div.numberedtextarea-line-numbers {
+    display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: bold;
+}
+/* Brief */
+#brief-intro-wrapper {
+    font-size: 1.4vh;
+}
+#brief-intro {
+    padding: 25px 40px;
+    border: 1px solid #eee;
+    background-color: #ffffff;
+    border-top: none;
+}
+#brief-intro .object {
+    margin-top: 11px;
+    font-style: italic;
+    font-size: 14px;
+}
+#brief-intro .object .form {
+    margin-left: 28px;
+    font-size: 12px;
+}
+#brief-intro .object .form .value {
+    font-style: normal;
+    font-weight: bold;
+}
+#brief-intro .split {
+    margin-top: 18px;
+    border: 1px solid #eee;
+}
+
+body{
+    font-family: menlo,monospace, Tahoma,"微软雅黑","幼圆";
+    color: #495057;
+    font-size: 14px;
+}
+i{
+  margin:auto 5px;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: #4285f4;
+    cursor:pointer;
+}
+a:hover{
+    text-decoration: none;
+    color: #44A6F8;
+}
+.header{
+    border-bottom: solid 1px #E5EBEE;
+    padding: 0px;
+    background: #fff;
+    box-shadow: 0 0px 1px #eee;
+}
+.footer{
+    clear:both;
+    margin: 20px;
+    padding:20px;text-align:center;color:#999;
+}
+.logo{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: #13C48B;
+    padding: 10px;
+}
+.logo:hover{
+    color: #41DFC4;
+}
+.navi{
+    padding:5px 20px;
+    font-size:14px;
+    font-weight:bold;
+    font-family:monospace,'微软雅黑';
+}
+.navi a{
+    padding: 0px 20px;
+    color: #4A5560;
+}
+
+.navi a:hover{
+    color: #888;
+}
+.main{
+    margin-top:40px auto;
+    width: 90%;
+    background-color: #fff;
+}
+.abox{
+    font-size:10px;
+    padding:10px;
+    width: 100%;
+    border-bottom:solid 1px #f6f6f6;
+    color: #666;
+}
+a.abox.current {
+    margin-right: -2px;
+    border-top:solid 1px #eee;
+    border-bottom:solid 1px #eee;
+    border-right:solid 1px #fff;
+    font-weight: bold;
+    background: #fff;
+    color:#4285f4;
+    z-index: 10000;
+}
+
+.abox .title{
+    font-size:14px;
+    padding:10px;
+}
+.abox .title i{
+    font-size:14px;
+    padding:5px;
+}
+.abox .abstract{
+    padding:0px 10px;
+}
+h5{font-size: 14px;}
+.green{
+    color:#00BC7C;
+
+}
+.green-light{
+    color:#41DFC4;
+}
+.green-deep{
+    color:#34a853;
+}
+.red{
+    color:#FF585D;
+}
+.red-light{
+    color:#FF65AA;
+}
+.red-hot{
+    color:#FF1B65;
+}
+.pink{
+    color:#FF6CAF;
+}
+.blue{
+    color:#4285f4;
+}
+.blue-light{
+    color:#24C1F4;
+}
+.blue-deep{
+    color:#4285f4;
+}
+.purple{
+    color:#927DF3;
+}
+.purple-light{
+    color:#8274F6;
+}
+.yellow{
+    color: #FFC147;
+}
+.yellow-light{
+    color:#FFC052;
+}
+.unread{
+    position: relative;
+    color: #fff;
+    box-shadow: 0 1px 1px #ddd;
+  }
+  .card{
+    box-shadow:0px 0px 3px #eee;
+
+    border-radius:2px;
+    text-align: left;
+    vertical-align: middle;
+    min-height: 150px;
+    width: 30%;
+    padding: 20px 30px;
+    margin:0 10px;
+    display: inline-block;
+    float: none;
+  }
+  .spinner {
+    margin: 10px auto;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .spinner > div {
+    background-color: #333;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    border-radius: 20px;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  .spinner .rect1 {
+    background-color: #FF585D;
+  }
+  .spinner .rect2 {
+    background-color: #FAB000;
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+
+  .spinner .rect3 {
+    background-color: #00BC7C;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+  .spinner .rect4 {
+    background-color: #4285f4;
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% {
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% {
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }

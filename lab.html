@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="all" />
+<meta name="author" content="json.cn" />
+<meta name="keywords" content="json,人工智能,自然语言处理,json.cn"/>
+<meta name="description" content="Json中文网2017年开始对自然语言处理方向进行研究和探索，并推出一系列相关json接口及服务，降低相关技术门槛，提升用户体验"/>
+<title>实验室 - Json.cn</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link href="https://cdn.bootcss.com/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/responsive-nav.js/1.12/responsive-nav.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/base.css">
+    </head>
+    <body>
+        <header class="header">
+    <div class="row-fluid" >
+        <div class="col-md-5" style="position:relative;">
+            <a class="logo" href="./">
+              Json.<span style="color:#4A5560;">cn</span></a>
+        </div>
+        <nav class="col-md-7" style="padding:10px 0; "  align="right">
+            <div id="nav"  class="navi" >
+                <a href="./" data-placement="bottom">在线解析</a>
+                <a href="./lab.html" target="_blank"  data-placement="bottom">
+                  <span class="purple">实验室</span>
+                </a>
+                <a href="./wiki.html"  data-placement="bottom">什么是JSON</a>
+                <a href="./code.html"  data-placement="bottom">JSON解析代码</a>
+                <a href="./component.html"  data-placement="bottom">JSON组件</a>
+
+            </div>
+        </nav>
+        <br style="clear:both;" />
+    </div>
+</header>
+        <main class="main container" style="text-align:center;">
+
+    <div class="row" style="text-align:center;min-width:800px;padding:50px 0;font-size:14px;" >
+      <h4 style="text-align:left;padding-left:55px;padding-bottom:10px;">探索发现</h4>
+      <div class="col-md-3  col-md-offset-1 card">
+        <h5><span class="red">词</span>性标注</h5>
+        <div>
+            对文本资料进行分词后，对分词结果进行词性标注
+        </div>
+      </div>
+      <div class="col-md-3 card">
+        <h5 ><span class="green">关</span>键词提取</h5>
+        <div>
+            从文本资料中提取关键词，并给出关键词权重
+        </div>
+      </div>
+      <div class="col-md-3 card">
+        <h5 ><span class="blue">文</span>本分类</h5>
+        <div>
+            根据特定规则对文本资料进行分类，给出分类信息和结果
+        </div>
+      </div>
+    </div>
+
+    <h4 style="text-align:left;padding-left:45px;padding-bottom:10px;">相关接口</h4>
+
+    <div class="row"
+    style="padding:0;text-align:center;min-width:800px;width:98%;margin:auto;">
+        <div class="col-md-3"
+          style="z-index: 100;text-align: center;min-height: 550px;padding:0;margin:0 auto;"
+          id="list-data" >
+            <a class="abox" v-for="(item,index) in list" :class="{'current': index === selected}"  v-on:click="load(index)" :data-key="item.id" >
+                <div class="title">
+                    {{item.name}}
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-9" style="z-index: 0;text-align: left;border-left:solid 1px #eee;" id="api-data">
+
+            <div class="row" style="margin:10px;padding:10px;border-bottom:solid 1px #f6f6f6;line-height:30px;">
+                <div class="row" style="padding:10px;">
+                  <div class="col-md-6">
+                      <div>试用token：</div>
+                      <code class="green" style="background-color:#eee;padding:5px;">jsoncn</code>
+                  </div>
+                  <div class="col-md-6">
+                      <div>请求方式:</div>
+                      <span>{{api.method}}</span>
+                  </div>
+                </div>
+                <div class="row" style="padding:10px;">
+                  <div class="col-md-6">
+                      <div>单IP访问限制：</div>
+                      <span class="red">{{api.ipLimit}}次／秒</span>
+                  </div>
+
+                  <div class="col-md-6">
+                      <div>单日访问限制：</div>
+                      <span class="red">{{api.dailyCallLimit}}次／天</span>
+                  </div>
+                </div>
+                <div class="row" style="padding:10px;">
+                  <div class="col-md-12">
+                      <div>接口地址：</div>
+                      <a style="text-decoration:underline;" href="https://lab.json.cn/api/wordcut" target="_blank">
+                          https://lab.json.cn/{{api.address}}
+                      </a>
+                  </div>
+                </div>
+
+            </div>
+
+            <div  class="row" style="font-size:10px;padding:0 20px;border-bottom:solid 1px #f6f6f6;">
+                <div class="col-md-6" style="padding:20px;">
+                    <h6>输入参数</h6>
+                    <div id="param"></div>
+                </div>
+                <div class="col-md-6"  style="padding:20px;">
+                    <h6>返回结果</h6>
+                    <div id="result"></div>
+                </div>
+            </div>
+
+            <div  class="row" style="font-size:12px;padding:0 20px;">
+                <div class="col-md-6" style="padding:20px;">
+                    <h6>参数说明</h6>
+                    <table class="table">
+                        <tr><th>参数</th><th>类型</th><th>说明</th><th>是否必须</th></tr>
+                        <tbody>
+                            <tr v-for="item in api.paramNote">
+                                <td>{{item.name}}</td>
+                                <td>{{item.type}}</td>
+                                <td  style="width:50%">{{item.note}}</td>
+                                <td>{{item.require}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6"  style="padding:20px;">
+                    <h6>结果说明</h6>
+                    <table class="table">
+                        <tr><th>参数</th><th>类型</th><th>说明</th><th>是否必须</th></tr>
+                        <tbody>
+                            <tr v-for="item in api.resultNote">
+                                <td>{{item.name}}</td>
+                                <td>{{item.type}}</td>
+                                <td  style="width:50%">{{item.note}}</td>
+                                <td>{{item.require}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--<div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>-->
+</main>
+        <footer class="footer">©2014 Json.cn All right reserved. 京ICP备15025187号-1 邮箱：service@json.cn</footer>
+    <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/responsive-nav.js/1.12/responsive-nav.min.js"></script>
+    <script src="https://cdn.bootcss.com/bignumber.js/9.0.0/bignumber.min.js"></script>
+    <script src="./js/jquery.json.js"></script>
+    <script src="./js/lab.js"></script>
+    </body>
+</html>

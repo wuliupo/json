@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "中文分词",
+        "note": "切分文章和句子为单个词汇",
+        "icon": "fa fa-cut",
+        "method": "POST",
+        "ipLimit": 10,
+        "dailyCallLimit": 1000000,
+        "address": "nlp/wordcut",
+        "param": "{\"token\":\"public\",\"text\":\"张三李四\"}",
+        "result": "{\"code\":200,\"msg\":\"success\",\"data\":[\"张三\",\"李四\"]}",
+        "paramNote": "[\r\n            {\r\n                \"name\":\"token\",\r\n                \"type\":\"string\",\r\n                \"require\":true,\r\n                \"note\":\"用于接口身份认证及数据统计\"\r\n            },{\r\n                \"name\":\"text\",\r\n                \"type\":\"string\",\r\n                \"require\":true,\r\n                \"note\":\"待分词文本内容\"\r\n            }\r\n        ]",
+        "resultNote": "[\r\n            {\r\n                \"name\":\"code\",\r\n                \"type\":\"int\",\r\n                \"require\":true,\r\n                \"note\":\"接口状态码，200时正常，其他值为异常，具体含义参考http状态码\"\r\n            },{\r\n                \"name\":\"msg\",\r\n                \"type\":\"string\",\r\n                \"require\":true,\r\n                \"note\":\"接口返回结果提示信息，正常为success\"\r\n            },{\r\n                \"name\":\"data\",\r\n                \"type\":\"array\",\r\n                \"require\":true,\r\n                \"note\":\"接口返回数据数组，接口数据均在此数组内\"\r\n            }\r\n        ]",
+        "created_at": "2017-09-20 16:00:00",
+        "updated_at": "2017-09-20 16:00:00"
+    }
+]

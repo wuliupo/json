@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>JSON在线解析及格式化验证 - JSON.cn</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="720" />
+    <meta http-equiv="Cache-Control" content="max-age=3600" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all" />
+    <meta name="author" content="json.cn" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="json,json在线解析,json格式化,json格式验证,json转xml,xml转json"/>
+    <meta name="description" content="Json中文网致力于在中国推广Json,并提供相关的Json解析、验证、格式化、压缩、编辑器以及Json与XML相互转换等服务"/>
+    <link href="./css/jquery.numberedtextarea.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/base.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+      <div class="row-fluid" >
+          <div class="col-md-5" style="position:relative;">
+              <a class="logo" href="./">
+                Json.<span style="color:#4A5560;">cn</span></a>
+          </div>
+          <nav class="col-md-7" style="padding:10px 0; "  align="right">
+              <div class="navi" >
+                  <a href="./" data-placement="bottom">在线解析</a>
+                  <a href="./lab.html" target="_blank"  data-placement="bottom">
+                    <span class="red">JSON实验室</span>
+                  </a>
+                  <a href="./wiki.html"  data-placement="bottom">什么是JSON</a>
+                  <a href="./code.html"  data-placement="bottom">JSON解析代码</a>
+                  <a href="./component.html"  data-placement="bottom">JSON组件</a>
+              </div>
+          </nav>
+          <br style="clear:both;" />
+      </div>
+  </header>
+
+
+<main class="row-fluid" style="height:85%;min-height:550px;">
+    <div class="col-md-5" style="padding:0px;height:100%;">
+        <textarea id="json-src" placeholder="在此输入json字符串或XML字符串..."   class="form-control common-font-size"
+        style="height:100%;height: 87vh;min-height:520px;padding:10px 10px 10px 30px;border:0;border-right:solid 1px #E5EBEE;border-bottom:solid 1px #eee;border-radius:0;resize: none; outline:none;"></textarea>
+    </div>
+    <div class="col-md-7" style="padding:0;position:relative;height:100%;">
+        <div  class="tool" style="position:absolute;">
+            <a href="#" class="tip zip" title="压缩"  data-placement="bottom"><i class="fa fa-database"></i></a>
+            <a href="#" class="tip xml" title="转XML"  data-placement="bottom"><i class="fa fa-file-excel-o"></i></a>
+            <a href="#" class="tip shown"  title="显示行号"  data-placement="bottom"><i class="glyphicon glyphicon-sort-by-order"></i></a>
+            <a href="#" class="tip clear" title="清空"  data-placement="bottom"><i class="fa fa-trash"></i></a>
+            <a href="#" class="tip save" title="保存"  data-placement="bottom"><i class="fa fa-download"></i></a>
+            <a href="#" class="tip copy" title="复制" data-clipboard-target="#json-target"  data-placement="bottom"><i class="fa fa-copy"></i></a>
+            <a href="#" class="tip compress" title="折叠"  data-placement="bottom"><i class="fa fa-compress"></i></a>
+        </div>
+        <div id="right-box" class="common-font-size"  style="width:100%;height: 87vh;min-height:520px;border:solid 1px #f6f6f6;border-radius:0;resize: none;overflow-y:scroll; outline:none;position:relative;padding-top:40px;">
+            <div id="line-num" style="background-color:#fafafa;padding:0px 8px;float:left;border-right:dashed 1px #E5EBEE;display:none;z-index:-1;color:#999;position:absolute;text-align:center;over-flow:hidden;">
+                <div>0</div>
+            </div>
+            <div class="ro" id="json-target" style="padding:0px 25px;white-space: pre-line;word-wrap:break-word;">
+            </div>
+        </div>
+        <form id="form-save" method="POST"><input type="hidden" value="" id="txt-content" name="content"></form>
+    </div>
+    <br style="clear:both;" />
+</main>
+<script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="./js/jquery.message.js"></script>
+<script src="https://cdn.bootcss.com/bignumber.js/9.0.0/bignumber.min.js"></script>
+<script src="./js/jquery.json.js"></script>
+<script src="./js/jquery.xml2json.js"></script>
+<script src="./js/jquery.json2xml.js"></script>
+<script src="https://cdn.bootcss.com/json2/20160511/json2.min.js"></script>
+<script src="https://cdn.bootcss.com/jsonlint/1.6.0/jsonlint.min.js"></script>
+<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="./js/jquery.numberedtextarea.js"></script>
+<script src="./js/app.js"></script>
+
+<footer style="padding:20px;text-align:center;color:#999;position:relative;">©2014 JSON.cn All right reserved.
+<a href="http://beian.miit.gov.cn/"  target="_blank">京ICP备15025187号-1</a>
+邮箱：service@json.cn
+</footer>
+</body>
+</html>
