@@ -39,28 +39,28 @@ a {
     color: #1baae4;
     font-family: monospace, Tahoma, '微软雅黑';
 }
-.green {
+a:hover {
+    text-decoration: none;
+    color: #47a7e6;
+}
+.green, a.green {
     color: #17b272;
 }
-.red {
+.red, a.red {
     color: #ff585d;
 }
-.red:hover {
+.red:hover, a.red:hover {
     color: #f98280;
 }
-.blue {
+.blue, a.bule {
     color: #1baae4;
 }
-.orange {
+.orange, a.orange {
     color: #fbc462;
 }
 input:focus,
 textarea:focus {
     outline: none;
-}
-a:hover {
-    text-decoration: none;
-    color: #47a7e6;
 }
 .label-success {
     background-color: #0fd59d;
